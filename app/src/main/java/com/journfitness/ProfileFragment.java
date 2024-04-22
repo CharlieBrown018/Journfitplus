@@ -115,7 +115,7 @@ public class ProfileFragment extends Fragment {
         roundProfile = view.findViewById(R.id.photo);
         photoButton = view.findViewById(R.id.actionCamera);
 
-        daoProfile = new DAOProfile(view.getContext());
+        daoProfile = new DAOProfile(view.getContext())  ;
         daoBodyMeasure = new DAOBodyMeasure(view.getContext());
         daoBodyPart = new DAOBodyPart(view.getContext());
 

@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -79,11 +80,15 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class FontesFragment extends Fragment {
+
+    private ExecutorService executorService = Executors.newFixedThreadPool(4);
 
     private int lTableColor = 1;
     private DisplayType mDisplayType = DisplayType.FREE_WORKOUT_DISPLAY;
@@ -698,7 +703,7 @@ public class FontesFragment extends Fragment {
                     break;
                 // Share
                 case 2:
-                    //Toast.makeText(getActivity(), "Share soon available", Toast.LENGTH_SHORT).show();
+                    /*//Toast.makeText(getActivity(), "Share soon available", Toast.LENGTH_SHORT).show();
                     Record r = mDbRecord.getRecord(id);
                     String text;
                     if (r.getExerciseType() == ExerciseType.STRENGTH || r.getExerciseType() == ExerciseType.ISOMETRIC) {
@@ -712,7 +717,19 @@ public class FontesFragment extends Fragment {
                         text = text.replace("__TIME__", String.valueOf(r.getDuration()));
                     }
                     text = text.replace(getView().getContext().getResources().getText(R.string.ShareParamMachine), r.getExercise());
-                    shareRecord(text);
+                    shareRecord(text);*/
+                    executorService.execute(() -> {
+                        Record record = mDbRecord.getRecord(id);
+                        getActivity().runOnUiThread(() -> {
+                            // Update the UI or handle the record
+                            // Example: display the record details in a Toast
+                            if (record != null) {
+                                Toast.makeText(getActivity(), "Record Shared: " + record.toString(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getActivity(), "Failed to retrieve record", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    });
                     break;
                 default:
             }
@@ -1082,6 +1099,14 @@ public class FontesFragment extends Fragment {
             detailsLayout.setVisibility(View.GONE);
         }
         detailsExpandArrow.setImageResource(sharedPref.getBoolean("showDetails", false) ? R.drawable.ic_expand_less : R.drawable.ic_expand_more);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (!executorService.isShutdown()) {
+            executorService.shutdown();
+        }
     }
 
     /*@Override

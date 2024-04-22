@@ -4,8 +4,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 
 import com.journfitness.DAO.DAOBase;
+import com.journfitness.programs.DataLoadedCallback;
+import com.journfitness.programs.ProgramListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -182,4 +185,54 @@ public class DAOProgram extends DAOBase {
                 new String[]{""});
         db.close();
     }
+
+    // Define an AsyncTask subclass to handle database operations asynchronously
+    private static class DatabaseTask extends AsyncTask<Void, Void, List<Program>> {
+
+        private final Context context;
+        private final Callback callback;
+
+        public DatabaseTask(Context context, Callback callback) {
+            this.context = context;
+            this.callback = callback;
+        }
+
+        @Override
+        protected List<Program> doInBackground(Void... voids) {
+            // Perform database operations here
+            DAOProgram daoProgram = new DAOProgram(context);
+            return daoProgram.getAll(); // Example: Fetch all programs from the database
+        }
+
+        @Override
+        protected void onPostExecute(List<Program> programs) {
+            // Callback to the UI thread with the results
+            if (callback != null) {
+                callback.onDataLoaded(programs);
+            }
+        }
+    }
+
+    // Interface for callback to the UI thread
+    public interface Callback {
+        void onDataLoaded(List<Program> programs);
+    }
+
+    // Method to fetch all programs asynchronously
+    public void getAllAsync(Context context, DataLoadedCallback callback) {
+        new AsyncTask<Void, Void, List<Program>>() {
+            @Override
+            protected List<Program> doInBackground(Void... voids) {
+                return getAll();
+            }
+
+            @Override
+            protected void onPostExecute(List<Program> programs) {
+                if (callback != null) {
+                    callback.onDataLoaded(programs);
+                }
+            }
+        }.execute();
+    }
+
 }

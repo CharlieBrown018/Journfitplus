@@ -27,7 +27,7 @@ import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class ProgramListFragment extends Fragment {
+public class ProgramListFragment extends Fragment implements DataLoadedCallback {
     private final View.OnClickListener clickAddButton = v -> {
         final EditText editText = new EditText(getContext());
         editText.setText("");
@@ -150,6 +150,7 @@ public class ProgramListFragment extends Fragment {
 
         mDb.deleteAllEmptyWorkout();
         refreshData();
+        mDb.getAllAsync(getContext(), this);
     }
 
     private void refreshData() {
@@ -174,6 +175,22 @@ public class ProgramListFragment extends Fragment {
 
     private Profile getProfile() {
         return ((MainActivity) getActivity()).getCurrentProfile();
+    }
+
+    @Override
+    public void onDataLoaded(List<Program> programs) {
+        // Update UI with the fetched programs
+        if (programs != null) {
+            dataModels.clear();
+            dataModels.addAll(programs);
+            if (mListAdapter == null) {
+                mListAdapter = new ProgramListAdapter(dataModels, getContext());
+                mListAdapter.setProfile(getProfile());
+                measureList.setAdapter(mListAdapter);
+            } else {
+                mListAdapter.notifyDataSetChanged();
+            }
+        }
     }
 
 }
