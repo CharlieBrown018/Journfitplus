@@ -74,7 +74,7 @@
                 android:layout_weight="20"
                 android:autoSizeMaxTextSize="14sp"
                 android:autoSizeTextType="uniform"
-                android:background="#f44336"
+                android:background="#d46158"
                 android:text="@string/fail"
                 android:textColor="#FFFFFF" />
 
@@ -86,7 +86,7 @@
                 android:layout_weight="20"
                 android:autoSizeMaxTextSize="14sp"
                 android:autoSizeTextType="uniform"
-                android:background="#54bf52"
+                android:background="#73ee0c"
                 android:text="@string/update"
                 android:textColor="#FFFFFF" />
 

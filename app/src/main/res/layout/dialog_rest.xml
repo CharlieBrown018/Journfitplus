@@ -176,7 +176,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:text="@string/exit"
-                android:background="#737373"
+                android:background="#d46158"
                 android:textColor="#FFFFFF"/>
 
         </LinearLayout>

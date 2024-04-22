@@ -78,7 +78,7 @@
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
-                android:background="#737373"
+                android:background="#d46158"
                 android:text="@android:string/cancel"
                 android:textColor="#FFFFFF" />
 
@@ -88,7 +88,7 @@
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
-                android:background="#54bf52"
+                android:background="#73ee0c"
                 android:text="@string/update"
                 android:textColor="#FFFFFF" />
 

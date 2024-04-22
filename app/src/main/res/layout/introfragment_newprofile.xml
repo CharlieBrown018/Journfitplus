@@ -1,144 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="#F85757"
+        android:fillViewport="true"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:fitsSystemWindows="false"
-            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:animateLayoutChanges="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical"
-            android:padding="@dimen/mi_baseline">
+            android:scrollbars="vertical">
 
+            <!-- Create a Profile Heading -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="@string/create_a_profile"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
-            <TextView
+            <!-- Profile Name -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/name_or_pseudo"
-                android:textSize="12sp" />
+                app:cardCornerRadius="20dp">
 
-            <EditText
-                android:id="@+id/profileName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/name_or_pseudo"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:singleLine="true" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="10dp"
-                android:hint="@string/birthday_optional"
-                android:text="@string/gender"
-                android:textSize="12sp" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:orientation="vertical">
-
-                <RadioButton
-                    android:id="@+id/radioButtonMale"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/radio_button"
-                    android:backgroundTint="#FF1E00"
-                    android:backgroundTintMode="add"
-                    android:bufferType="normal"
-                    android:button="@null"
-                    android:gravity="center_horizontal"
-                    android:padding="2dp"
-                    android:text="@string/maleGender"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp" />
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-                <RadioButton
-                    android:id="@+id/radioButtonFemale"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/radio_button"
-                    android:backgroundTint="#FF1E00"
-                    android:backgroundTintMode="add"
-                    android:bufferType="normal"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center_horizontal"
-                    android:padding="2dp"
-                    android:text="@string/femaleGender"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp" />
+                    <!-- Name/Pseudonym Heading -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/name_or_pseudo"
+                        android:textSize="12sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonOtherGender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/radio_button"
-                    android:backgroundTint="#FF1E00"
-                    android:backgroundTintMode="add"
-                    android:bufferType="normal"
-                    android:button="@null"
-                    android:gravity="center_horizontal"
-                    android:padding="2dp"
-                    android:text="@string/otherGender"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black" />
+                    <!-- Profile Name EditText -->
+                    <EditText
+                        android:id="@+id/profileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Insert name"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:singleLine="true" />
 
-            </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <TextView
+            <!-- Gender Radio Group -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/birthday_optional"
-                android:importantForAutofill="no"
-                android:singleLine="true"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/birthday_optional"
-                android:textSize="12sp" />
+                app:cardCornerRadius="20dp">
 
-            <TextView
-                android:id="@+id/profileBirthday"
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Gender Heading -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/gender"
+                        android:textSize="12sp" />
+
+                    <!-- Gender Radio Buttons -->
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMale"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/radio_button"
+
+                            android:backgroundTintMode="add"
+                            android:bufferType="normal"
+                            android:button="@null"
+                            android:gravity="center_horizontal"
+                            android:padding="2dp"
+                            android:text="@string/maleGender"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonFemale"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/radio_button"
+                            android:backgroundTintMode="add"
+                            android:bufferType="normal"
+                            android:button="@null"
+                            android:checked="true"
+                            android:gravity="center_horizontal"
+                            android:padding="2dp"
+                            android:text="@string/femaleGender"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonOtherGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/radio_button"
+                            android:backgroundTintMode="add"
+                            android:bufferType="normal"
+                            android:button="@null"
+                            android:gravity="center_horizontal"
+                            android:padding="2dp"
+                            android:text="@string/otherGender"
+                            android:textSize="20sp"
+                            android:textColor="@android:color/black" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Profile Birthday -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/editTextBackground"
-                android:hint="@string/birthday_optional"
-                android:importantForAutofill="no"
-                android:singleLine="true"
-                android:textSize="18sp" />
+                app:cardCornerRadius="20dp">
 
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
+                    <!-- Birthday Heading -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/birthday_optional"
+                        android:textSize="12sp" />
+
+                    <!-- Profile Birthday TextView -->
+                    <TextView
+                        android:id="@+id/profileBirthday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/editTextBackground"
+                        android:hint="MM/DD/YYYY"
+                        android:importantForAutofill="no"
+                        android:singleLine="true"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Create Button -->
             <Button
                 android:id="@+id/create_newprofil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/mi_baseline"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_background"
                 android:text="@string/create"
-                android:textColor="@android:color/black"
-                android:background="#F8E286"/>
+                android:textColor="#FFFFFF"></Button>
 
         </LinearLayout>
     </ScrollView>
