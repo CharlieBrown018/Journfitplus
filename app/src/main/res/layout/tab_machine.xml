@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#fffaed">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:name="tab_machines"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/addExercise"
+                style="@style/Widget.AppCompat.Button.AddButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="@string/add_new_exercise"
+                android:textColor="#FFFFFF"
+                android:elevation="7dp"
+                android:stateListAnimator="@null" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp"
+                android:elevation="7dp"
+                app:cardElevation="7dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/searchField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:hint="@string/FilterHint"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textCapWords|textAutoComplete|textNoSuggestions|textVisiblePassword"
+                        android:singleLine="true"
+                        android:textColorHint="#737373" />
+
+                    <TextView
+                        android:id="@+id/textViewFilterByTypes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="@string/FilterTextViewType"
+                        android:textColor="#FFFFFF"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listMachine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#414141"
+                android:drawSelectorOnTop="false"
+                android:minHeight="300dp"
+                android:elevation="7dp"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

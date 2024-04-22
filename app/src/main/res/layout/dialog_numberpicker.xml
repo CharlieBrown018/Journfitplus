@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_light_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Buttons for increasing values -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="+0.25"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="+0.5"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Button for adding 1 -->
+        <Button
+            android:id="@+id/btn_plusOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="+1"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Button for adding 5 -->
+        <Button
+            android:id="@+id/btn_plusFive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="+5"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Button for adding 10 -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="+10"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+    <!-- EditText for number input -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="3"
+        android:gravity="center"
+        android:inputType="phone"
+        android:maxEms="5"
+        android:padding="10dp"
+        android:layout_marginBottom="8dp"
+        android:radius="10dp" />
+
+    <!-- Buttons for decreasing values -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="-0.25"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="-0.5"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Button for subtracting 1 -->
+        <Button
+            android:id="@+id/btn_minusOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="-1"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Button for subtracting 5 -->
+        <Button
+            android:id="@+id/btn_minusFive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="-5"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <!-- Button for subtracting 10 -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F85757"
+            android:text="-10"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+    <!-- Buttons for confirmation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#737373"
+            android:text="@android:string/cancel"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#54bf52"
+            android:text="@android:string/ok"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:radius="10dp"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+</LinearLayout>

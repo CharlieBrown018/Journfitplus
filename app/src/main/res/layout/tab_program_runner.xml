@@ -1,0 +1,145 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="tab_program_runner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="#fffaed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Program Selection -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:elevation="7dp"
+            app:cardBackgroundColor="#414141"
+            app:cardElevation="7dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:padding="7dp">
+
+                <!-- Program Selection Content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Program Selection Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/programs"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Program Selection Spinner -->
+                    <Spinner
+                        android:id="@+id/programSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- New Program Button -->
+                    <Button
+                        android:id="@+id/newProgram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="7dp"
+                        android:background="@drawable/button_background"
+                        android:minWidth="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/newStr"
+                        android:textColor="#FFFFFF" />
+
+                    <!-- Edit Program Button -->
+                    <Button
+                        android:id="@+id/editProgram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="7dp"
+                        android:background="@drawable/button_background"
+                        android:minWidth="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/edit"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <!-- Start/Stop Program Button -->
+                <Button
+                    android:id="@+id/startStopProgram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/button_background"
+                    android:text="@string/start_program"
+                    android:textColor="#FFFFFF"
+                    android:elevation="7dp"
+                    android:stateListAnimator="@null" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Program List Title -->
+        <TextView
+            android:id="@+id/programListTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="@string/program_preview"
+            android:textColor="#fffaed"
+            android:textSize="1sp"
+            android:textStyle="bold" />
+
+        <!-- Program Record List -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            app:cardCornerRadius="10dp"
+            android:elevation="7dp"
+            app:cardElevation="7dp"
+            app:cardUseCompatPadding="true">
+
+            <ListView
+                android:id="@+id/listProgramRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:dividerHeight="3dp"
+                android:fastScrollEnabled="false"
+                android:isScrollContainer="false"
+                android:scrollbars="none"
+                tools:ignore="NestedScrolling" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Empty Program List Message -->
+        <TextView
+            android:id="@+id/listProgramEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/this_program_is_empty"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            android:elevation="7dp"
+            android:stateListAnimator="@null" />
+    </LinearLayout>
+</ScrollView>

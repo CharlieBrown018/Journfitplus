@@ -1,0 +1,279 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="tab_fontes"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fffaed"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:animateLayoutChanges="true"
+        android:background="#fffaed"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:scrollbars="vertical">
+
+        <!-- Machine Selection, Workout Values Input, and Details -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detailsCardView"
+            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Machine Selection -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Machine Image -->
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/imageMachine"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_exercises"
+                        app:civ_background_color="#414141"
+                        app:civ_border_width="0dp"
+                        app:civ_shadow="false" />
+
+                    <!-- Machine Name Input -->
+                    <AutoCompleteTextView
+                        android:id="@+id/editMachine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/buttonListMachine"
+                        android:layout_toEndOf="@+id/imageMachine"
+                        android:hint="@string/MachineHint"
+                        android:imeOptions="actionNext"
+                        android:inputType="text|textCapWords|textAutoComplete"
+                        android:selectAllOnFocus="true"
+                        android:singleLine="true" />
+
+                    <!-- Machine List Button -->
+                    <ImageButton
+                        android:id="@+id/buttonListMachine"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:background="#414141"
+                        android:src="@drawable/ic_list_alt" />
+
+                </RelativeLayout>
+
+                <!-- Workout Values Input -->
+                <com.journfitness.views.WorkoutValuesInputView
+                    android:id="@+id/WorkoutValuesInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:selectedType="cardio"
+                    app:showRestTime="true"
+                    app:showTypeSelector="true"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Details Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Expand Arrow Button -->
+                    <ImageButton
+                        android:id="@+id/buttonExpandArrow"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_expand_more"
+                        app:tint="#737373" />
+
+                    <!-- Notes Layout -->
+                    <LinearLayout
+                        android:id="@+id/notesLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <!-- Automatic Date Time Checkbox -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:text="@string/automatic_date_time" />
+
+                            <CheckBox
+                                android:id="@+id/autoTimeCheckBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:buttonTint="#737373"
+                                android:checked="true"
+                                android:text="" />
+                        </LinearLayout>
+
+                        <!-- Date Layout -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="50"
+                                android:gravity="end"
+                                android:text="@string/DateLabel" />
+
+                            <TextView
+                                android:id="@+id/editDate"
+                                style="@style/editableTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:enabled="false"
+                                tools:text="10/05/20" />
+
+                        </LinearLayout>
+
+                        <!-- Time Layout -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="50"
+                                android:gravity="end"
+                                android:text="@string/timeLabel" />
+
+                            <TextView
+                                android:id="@+id/editTime"
+                                style="@style/editableTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="50"
+                                android:enabled="false"
+                                tools:text="18:26:10" />
+
+                        </LinearLayout>
+
+
+                        <!-- Notes Section -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="8dp"
+                                android:gravity="start"
+                                android:text="@string/NotesLabel" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:height="40dp"
+                                android:ems="10"
+                                android:hint="@string/NotesLabel"
+                                android:inputType="textMultiLine"
+                                android:lines="3"
+                                android:maxLines="5"
+                                android:minHeight="40dp"
+                                android:minLines="2" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Add Performance Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/addperff"
+                style="@style/Widget.AppCompat.Button.AddButton"
+                android:background="#737373"
+                android:text="@string/AddLabel" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/TopTenLabel"
+                android:textColor="#424242"
+                android:layout_marginTop="25dp"/>
+
+        </LinearLayout>
+
+        <!-- List Record Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/listRecordCardView"
+            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            android:layout_marginTop="8dp">
+
+            <com.journfitness.utils.ExpandedListView
+                android:id="@+id/listRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="false"
+                android:fastScrollEnabled="false"
+                android:isScrollContainer="false"
+                android:scrollbars="none" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

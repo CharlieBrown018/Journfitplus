@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:name="tab_bodytracking"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#fffaed">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ListView
+            android:id="@+id/listBodyMeasures"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#414141"
+            android:drawSelectorOnTop="false"
+            android:minHeight="300dp"
+            android:elevation="7dp"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+    </LinearLayout>
