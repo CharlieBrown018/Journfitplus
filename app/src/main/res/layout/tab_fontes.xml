@@ -114,7 +114,7 @@
                     android:baselineAlignBottom="false"
                     android:cropToPadding="false"
                     android:src="@drawable/ic_expand_more"
-                    android:tint="#737373" />
+                    app:tint="#737373" />
 
                 <LinearLayout
                     android:id="@+id/notesLayout"
@@ -260,7 +260,7 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="3dp"
                 android:text="@string/TopTenLabel"
-                android:textColor="#FFFFFF" />
+                android:textColor="#424242" />
 
         </LinearLayout>
 
@@ -273,7 +273,8 @@
             android:dividerHeight="0dp"
             android:fastScrollEnabled="false"
             android:isScrollContainer="false"
-            android:scrollbars="none" />
+            android:scrollbars="none"
+            android:padding="8dp"/>
 
     </LinearLayout>
 </ScrollView>

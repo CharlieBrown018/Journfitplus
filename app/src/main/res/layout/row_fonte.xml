@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="3dp">
+    android:padding="8dp"
+    android:background="#424242">
 
     <TextView
         android:id="@+id/SEPARATOR_CELL"
