@@ -12,6 +12,7 @@
         <item name="cardViewStyle">@style/CardViewStyle</item>
         <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
         <item name="floatingActionButtonStyle">@style/Widget.Design.FloatingActionButton</item>
+        <item name="android:forceDarkAllowed">true</item>
     </style>
 
     <style name="CardViewStyle" parent="CardView">

@@ -175,20 +175,20 @@ public class AboutFragment extends Fragment {
         TextView mpMaterialFavoriteButton = view.findViewById(R.id.MaterialFavoriteButton);
 
 
-        mpMPAndroidChartTextView.setOnClickListener(clickLicense);
-        mpJavaCVSTextView.setOnClickListener(clickLicense);
-        mpLicenseDialogTextView.setOnClickListener(clickLicense);
-        mpChronometerTextView.setOnClickListener(clickLicense);
-        mpMaterialIntroTextView.setOnClickListener(clickLicense);
-        mpTimePickerWithSecondsTextView.setOnClickListener(clickLicense);
-        mpSmartTabLayoutTextView.setOnClickListener(clickLicense);
-        mpFlaticonTextView.setOnClickListener(clickLicense);
-        mpFreepikView.setOnClickListener(clickLicense);
-        mpCircleProgressView.setOnClickListener(clickLicense);
-        mpCircularImageView.setOnClickListener(clickLicense);
-        mpkToast.setOnClickListener(clickLicense);
-        mpSweetAlertDialog.setOnClickListener(clickLicense);
-        mpMaterialFavoriteButton.setOnClickListener(clickLicense);
+        mpMPAndroidChartTextView.setTextIsSelectable(false);
+        mpJavaCVSTextView.setTextIsSelectable(false);
+        mpLicenseDialogTextView.setTextIsSelectable(false);
+        mpChronometerTextView.setTextIsSelectable(false);
+        mpMaterialIntroTextView.setTextIsSelectable(false);
+        mpTimePickerWithSecondsTextView.setTextIsSelectable(false);
+        mpSmartTabLayoutTextView.setTextIsSelectable(false);
+        mpFlaticonTextView.setTextIsSelectable(false);
+        mpFreepikView.setTextIsSelectable(false);
+        mpCircleProgressView.setTextIsSelectable(false);
+        mpCircularImageView.setTextIsSelectable(false);
+        mpkToast.setTextIsSelectable(false);
+        mpSweetAlertDialog.setTextIsSelectable(false);
+        mpMaterialFavoriteButton.setTextIsSelectable(false);
 
         // Inflate the layout for this fragment
         return view;

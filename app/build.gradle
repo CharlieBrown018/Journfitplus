@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.journfitplus"
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 33
         versionCode 63
         versionName "1.6"
