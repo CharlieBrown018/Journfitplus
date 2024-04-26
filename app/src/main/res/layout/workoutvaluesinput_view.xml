@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#414141">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ExerciseTypeSelectorLayout"
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="invisible">
 
         <TextView
             style="@style/Widget.AppCompat.TextView"
@@ -88,7 +89,8 @@
         android:baselineAligned="false"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="visible"
+        >
 
         <!-- SETS -->
         <com.journfitness.views.SingleValueInputView
@@ -102,7 +104,8 @@
             app:title="@string/SerieLabel"
             app:value=""
             tools:value="10"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            />
 
         <!-- REPS -->
         <com.journfitness.views.SingleValueInputView
@@ -144,7 +147,8 @@
             app:title="@string/PoidsLabel"
             app:units="@array/weight_units"
             tools:value="10"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            />
 
         <!-- DISTANCE -->
         <com.journfitness.views.SingleValueInputView
@@ -185,7 +189,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#414141">
 
             <TextView
                 android:layout_width="wrap_content"

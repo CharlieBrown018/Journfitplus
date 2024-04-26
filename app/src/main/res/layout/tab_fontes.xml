@@ -34,7 +34,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:background="#414141">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -82,14 +83,24 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <com.journfitness.views.WorkoutValuesInputView
-            android:id="@+id/WorkoutValuesInput"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/workoutValuesCardView"
+            style="@style/CardViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:selectedType="cardio"
-            app:showRestTime="true"
-            app:showTypeSelector="true"
-            android:textColor="#000000"/>
+            app:cardCornerRadius="20dp">
+
+            <com.journfitness.views.WorkoutValuesInputView
+                android:id="@+id/WorkoutValuesInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectedType="cardio"
+                app:showRestTime="true"
+                app:showTypeSelector="true"
+                android:textColor="#000000"
+                android:padding="16dp"
+                android:background="#414141"/>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/detailsCardView"
@@ -102,7 +113,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="#414141">
 
                 <ImageButton
                     android:id="@+id/buttonExpandArrow"
